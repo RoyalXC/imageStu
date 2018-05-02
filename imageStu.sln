@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "imageStu", "imageStu\imageStu.vcxproj", "{2B04D114-99EB-4446-8E82-234AC9C85647}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B04D114-99EB-4446-8E82-234AC9C85647}.Debug|x64.ActiveCfg = Debug|x64
+		{2B04D114-99EB-4446-8E82-234AC9C85647}.Debug|x64.Build.0 = Debug|x64
+		{2B04D114-99EB-4446-8E82-234AC9C85647}.Debug|x86.ActiveCfg = Debug|Win32
+		{2B04D114-99EB-4446-8E82-234AC9C85647}.Debug|x86.Build.0 = Debug|Win32
+		{2B04D114-99EB-4446-8E82-234AC9C85647}.Release|x64.ActiveCfg = Release|x64
+		{2B04D114-99EB-4446-8E82-234AC9C85647}.Release|x64.Build.0 = Release|x64
+		{2B04D114-99EB-4446-8E82-234AC9C85647}.Release|x86.ActiveCfg = Release|Win32
+		{2B04D114-99EB-4446-8E82-234AC9C85647}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0EB7789A-A9AA-4224-86DD-1D66D0351EC4}
+	EndGlobalSection
+EndGlobal
