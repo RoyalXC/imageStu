@@ -94,7 +94,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -120,7 +120,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -139,6 +139,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BaseColorInfo.h" />
+    <ClInclude Include="ColorSpaceInfo.h" />
+    <ClInclude Include="CommonCheck.h" />
+    <ClInclude Include="DlgShowArray.h" />
+    <ClInclude Include="DlgTask.h" />
+    <ClInclude Include="ImagePara.h" />
+    <ClInclude Include="ImageStu.h" />
+    <ClInclude Include="ImageStuDlg.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="StdAfx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseColorInfo.cpp" />
+    <ClCompile Include="ColorSpaceInfo.cpp" />
+    <ClCompile Include="CommonCheck.cpp" />
+    <ClCompile Include="DlgShowArray.cpp" />
+    <ClCompile Include="DlgTask.cpp" />
+    <ClCompile Include="ImageStu.cpp" />
+    <ClCompile Include="ImageStuDlg.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ImageStu.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
