@@ -149,6 +149,7 @@
     <ClInclude Include="ImageStuDlg.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="Tools.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseColorInfo.cpp" />

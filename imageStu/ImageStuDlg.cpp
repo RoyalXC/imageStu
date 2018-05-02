@@ -12,6 +12,7 @@
 #include "ColorSpaceInfo.h"
 #include<iostream>
 #include<fstream>
+#include"Tools.h"
 
 using namespace std;
 //#include <fstream.h>
@@ -856,9 +857,7 @@ void CImageStuDlg::ShowPicByArray(CBaseColorInfo * colorData,
 //   width: int, 图像宽度
 //   height: int, 图像高度
 //////////////////////////////////////////////////////////////////////////
-void CImageStuDlg::ShowPicByArray(int * grayData,
-	int width,
-	int height) {
+void CImageStuDlg::ShowPicByArray(int * grayData,int width,int height) {
 
 	// 将灰度图像转成彩色图像
 	CBaseColorInfo * colorData = new CBaseColorInfo[width * height];
@@ -878,14 +877,6 @@ void CImageStuDlg::ShowPicByArray(int * grayData,
 	delete[] colorData;
 
 }
-
-
-
-
-
-
-
-
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -974,7 +965,7 @@ bool CImageStuDlg::SaveAsBmp(char * bmpName,
 }
 
 
-
+//全红
 void CImageStuDlg::OnAllRed()
 {
 	// TODO: Add your command handler code here
@@ -991,6 +982,7 @@ void CImageStuDlg::OnAllRed()
 
 }
 
+//红蓝相间
 void CImageStuDlg::OnRedBlue()
 {
 
@@ -1027,6 +1019,7 @@ void CImageStuDlg::OnRedBlue()
 
 }
 
+//彩色-》灰度
 void CImageStuDlg::OnColorGray()
 {
 	// TODO: Add your command handler code here
@@ -1062,6 +1055,7 @@ void CImageStuDlg::OnColorGray()
 
 }
 
+//灰度-》黑白
 void CImageStuDlg::OnGrayBlack()
 {
 	if (_flag == 0)
@@ -1099,6 +1093,7 @@ void CImageStuDlg::OnGrayBlack()
 	delete[] img;
 }
 
+//灰度分辨率
 void CImageStuDlg::OnGRAYRESOlV()
 {
 	if (_flag == 0)
@@ -1138,7 +1133,8 @@ void CImageStuDlg::OnGRAYRESOlV()
 
 }
 
-void CImageStuDlg::OnDirectScaling() //直接缩放
+//直接缩放
+void CImageStuDlg::OnDirectScaling() 
 {
 	if (_flag == 0)
 	{
@@ -1184,7 +1180,8 @@ void CImageStuDlg::OnDirectScaling() //直接缩放
 
 }
 
-void CImageStuDlg::OnScall2() //最近邻插值
+//最近邻插值
+void CImageStuDlg::OnScall2() 
 {
 	if (_flag == 0)
 	{
@@ -1236,7 +1233,8 @@ void CImageStuDlg::OnScall2() //最近邻插值
 
 }
 
-void CImageStuDlg::OnScall3() //双线性插值
+//双线性插值
+void CImageStuDlg::OnScall3() 
 {
 	if (_flag == 0)
 	{
@@ -1316,7 +1314,8 @@ void CImageStuDlg::OnScall3() //双线性插值
 
 }
 
-void CImageStuDlg::OnTranslation() //平移
+//平移
+void CImageStuDlg::OnTranslation() 
 {
 	if (_flag == 0)
 	{
@@ -1354,8 +1353,8 @@ void CImageStuDlg::OnTranslation() //平移
 
 }
 
-
-void CImageStuDlg::OnHorizontal() //水平镜像
+//水平镜像
+void CImageStuDlg::OnHorizontal() 
 {
 	if (_flag == 0)
 	{
@@ -1388,7 +1387,8 @@ void CImageStuDlg::OnHorizontal() //水平镜像
 
 }
 
-void CImageStuDlg::OnVertical() //垂直镜像
+//垂直镜像
+void CImageStuDlg::OnVertical() 
 {
 	if (_flag == 0)
 	{
@@ -1421,7 +1421,8 @@ void CImageStuDlg::OnVertical() //垂直镜像
 
 }
 
-void CImageStuDlg::OnTranspose() //转置
+//转置
+void CImageStuDlg::OnTranspose() 
 {
 	if (_flag == 0)
 	{
@@ -1453,7 +1454,8 @@ void CImageStuDlg::OnTranspose() //转置
 	delete[] img;
 }
 
-void CImageStuDlg::OnTakeBack() //取反
+//取反
+void CImageStuDlg::OnTakeBack() 
 {
 	if (_flag == 0)
 	{
@@ -1481,7 +1483,8 @@ void CImageStuDlg::OnTakeBack() //取反
 	delete[] img;
 }
 
-void CImageStuDlg::OnHadesTrans() //冥次变换
+//冥次变换
+void CImageStuDlg::OnHadesTrans() 
 {
 	if (_flag == 0)
 	{
@@ -1522,7 +1525,8 @@ void CImageStuDlg::OnHadesTrans() //冥次变换
 
 }
 
-void CImageStuDlg::OnLogTrans() //对数变换
+//对数变换
+void CImageStuDlg::OnLogTrans() 
 {
 	if (_flag == 0)
 	{
@@ -1554,7 +1558,8 @@ void CImageStuDlg::OnLogTrans() //对数变换
 	delete[] img;
 }
 
-void CImageStuDlg::OnPiecewise() //分段函数
+//分段函数
+void CImageStuDlg::OnPiecewise()
 {
 	if (_flag == 0)
 	{
@@ -1589,7 +1594,8 @@ void CImageStuDlg::OnPiecewise() //分段函数
 
 }
 
-void CImageStuDlg::OnWeipingmian() //位平面
+//位平面
+void CImageStuDlg::OnWeipingmian() 
 {
 	if (_flag == 0)
 	{
@@ -1627,6 +1633,7 @@ void CImageStuDlg::OnWeipingmian() //位平面
 
 }
 
+//均衡化
 void CImageStuDlg::OnJunhenghua()
 {
 	if (_flag == 0)
@@ -1678,7 +1685,8 @@ void CImageStuDlg::OnJunhenghua()
 
 }
 
-void CImageStuDlg::OnJunZhiLvBo() //均值滤波快速计算
+//均值滤波快速计算
+void CImageStuDlg::OnJunZhiLvBo() 
 {
 	if (_flag == 0)
 	{
@@ -1737,6 +1745,7 @@ void CImageStuDlg::OnJunZhiLvBo() //均值滤波快速计算
 	delete[] img;
 }
 
+//加权滤波
 void CImageStuDlg::OnJiaQuanLvBo()
 {
 
@@ -1821,7 +1830,7 @@ void CImageStuDlg::OnJiaQuanLvBo()
 	delete[] img;
 }
 
-
+//邻域阈值
 void CImageStuDlg::OnLinYuYuZhi()
 {
 	if (_flag == 0)
@@ -1902,7 +1911,8 @@ void CImageStuDlg::OnLinYuYuZhi()
 	delete[] img;
 }
 
-void CImageStuDlg::On2dZhongzhi() //2D中值滤波
+//2D中值滤波
+void CImageStuDlg::On2dZhongzhi() 
 {
 	if (_flag == 0)
 	{
@@ -1945,7 +1955,8 @@ void CImageStuDlg::On2dZhongzhi() //2D中值滤波
 	delete[] temp;
 }
 
-void CImageStuDlg::On2dZhongzhiShizi() //2D中值滤波（十字）
+//2D中值滤波（十字）
+void CImageStuDlg::On2dZhongzhiShizi() 
 {
 	if (_flag == 0)
 	{
@@ -1991,7 +2002,8 @@ void CImageStuDlg::On2dZhongzhiShizi() //2D中值滤波（十字）
 
 }
 
-void CImageStuDlg::OnLaplace() //拉普拉斯算子
+//拉普拉斯算子
+void CImageStuDlg::OnLaplace() 
 {
 	if (_flag == 0)
 	{
@@ -2053,7 +2065,8 @@ void CImageStuDlg::OnLaplace() //拉普拉斯算子
 
 }
 
-void CImageStuDlg::OnSobel() //Sobel 算子
+//Sobel 算子
+void CImageStuDlg::OnSobel() 
 {
 	if (_flag == 0)
 	{
@@ -2123,7 +2136,8 @@ void CImageStuDlg::OnSobel() //Sobel 算子
 
 }
 
-void CImageStuDlg::OnRgbHsi() //RGB->HSI
+//RGB->HSI
+void CImageStuDlg::OnRgbHsi() 
 {
 	if (_flag == 0)
 	{
@@ -2223,7 +2237,8 @@ void CImageStuDlg::OnRgbHsi() //RGB->HSI
 	delete[] img;
 }
 
-void CImageStuDlg::On256gray216color() //256灰度->216彩色
+//256灰度->216彩色
+void CImageStuDlg::On256gray216color() 
 {
 	if (_flag == 0)
 	{
@@ -2273,7 +2288,8 @@ void CImageStuDlg::On256gray216color() //256灰度->216彩色
 
 }
 
-void CImageStuDlg::OnHsiRgb() //HSI->RGB
+//HSI->RGB
+void CImageStuDlg::OnHsiRgb() 
 {
 	if (_flag == 0)
 	{
@@ -2418,7 +2434,7 @@ void CImageStuDlg::OnHsiRgb() //HSI->RGB
 
 }
 
-
+//RGB->HSI->H加60°
 void CImageStuDlg::OnRGBHSIHAdd60()
 {
 	if (_flag == 0)
@@ -2566,6 +2582,7 @@ void CImageStuDlg::OnRGBHSIHAdd60()
 	delete[] img_rgb;
 }
 
+//RGB->HSI->S减50%
 void CImageStuDlg::OnRGBHSISCut50()
 {
 	if (_flag == 0)
@@ -2713,6 +2730,7 @@ void CImageStuDlg::OnRGBHSISCut50()
 	delete[] img_rgb;
 }
 
+//RGB->HSI->I减50%
 void CImageStuDlg::OnRGBHSIICut50()
 {
 	if (_flag == 0)
@@ -2859,7 +2877,8 @@ void CImageStuDlg::OnRGBHSIICut50()
 	delete[] img_rgb;
 }
 
-void CImageStuDlg::OnExpand() //图像膨胀
+//图像膨胀
+void CImageStuDlg::OnExpand() 
 {
 	if (_flag == 0)
 	{
@@ -2900,7 +2919,8 @@ void CImageStuDlg::OnExpand() //图像膨胀
 
 }
 
-void CImageStuDlg::OnDilation() //图像腐蚀
+//图像腐蚀
+void CImageStuDlg::OnDilation() 
 {
 	if (_flag == 0)
 	{
@@ -2942,8 +2962,8 @@ void CImageStuDlg::OnDilation() //图像腐蚀
 
 }
 
-
-void CImageStuDlg::OnOpen()  //开操作
+//开操作
+void CImageStuDlg::OnOpen()
 {
 	if (_flag == 0)
 	{
@@ -3004,9 +3024,8 @@ void CImageStuDlg::OnOpen()  //开操作
 
 }
 
-
-
-void CImageStuDlg::OnClose() //图像闭操作
+//图像闭操作
+void CImageStuDlg::OnClose()
 {
 	if (_flag == 0)
 	{
@@ -3067,70 +3086,8 @@ void CImageStuDlg::OnClose() //图像闭操作
 
 }
 
-
-int* Expland(int width, int height, int* imgX)
-{
-
-	int size = width * height;
-
-	int step = 1;
-	int color = 0;
-	int* temp = new int[size];
-	for (int i = 0; i < size; i++)
-	{
-		temp[i] = imgX[i];
-	}
-
-	for (int x = step; x < width - step; x++)
-	{
-		for (int y = step; y < height - step; y++)
-		{
-			int index = y * width + x;
-			if (temp[index] == color
-				|| temp[index - 1] == color
-				|| temp[index + 1] == color
-				|| temp[index - width] == color
-				|| temp[index + width] == color)
-			{
-				imgX[index] = 0;
-			}
-			else
-				imgX[index] = 1;
-		}
-	}
-	delete[] temp;
-	return imgX;
-}
-
-int* Mixed(int size, int* imgX, int* imgB)
-{
-	for (int i = 0; i < size; i++)
-	{
-		if (imgX[i] == 0 && imgB[i] == 0)
-		{
-			imgX[i] = 0;
-		}
-		else
-			imgX[i] = 1;
-	}
-	return imgX;
-}
-
-int CountX(int size, int* imgX)
-{
-	int count = 0;
-	for (int i = 0; i < size; i++)
-	{
-		if (imgX[i] == 1)
-		{
-			count++;
-		}
-	}
-	return count;
-}
-
-
-void CImageStuDlg::OnFill() //图像填充
+//图像填充
+void CImageStuDlg::OnFill()
 {
 	if (_flag == 0)
 	{
@@ -3219,6 +3176,7 @@ void CImageStuDlg::OnFill() //图像填充
 
 }
 
+//求边界
 void CImageStuDlg::OnBoard()
 {
 	if (_flag == 0)
@@ -3290,110 +3248,8 @@ void CImageStuDlg::OnBoard()
 	delete[] imgAB;
 }
 
-
-void ExplandTempA(int width, int height, int* tempA)
-{
-
-	int size = width * height;
-
-	int step = 1;
-	int color = 1;
-	int* temp = new int[size];
-	for (int i = 0; i < size; i++)
-	{
-		temp[i] = tempA[i];
-	}
-
-	for (int x = step; x < width - step; x++)
-	{
-		for (int y = step; y < height - step; y++)
-		{
-			int index = y * width + x;
-			if (temp[index] == color
-				|| temp[index - 1] == color
-				|| temp[index + 1] == color
-				|| temp[index - width] == color
-				|| temp[index + width] == color
-				|| temp[index - width - 1] == color
-				|| temp[index - width + 1] == color
-				|| temp[index + width - 1] == color
-				|| temp[index + width + 1] == color)
-			{
-				tempA[index] = 1;
-			}
-			else
-				tempA[index] = 0;
-		}
-	}
-	delete[] temp;
-}
-
-void MixTempA(int size, int* imgA, int* tempA, int* tempB)
-{
-	for (int i = 0; i < size; i++)
-	{
-		if (imgA[i] == 1 && tempA[i] == 1)
-		{
-			tempB[i] = 1;
-		}
-		else
-			tempB[i] = 0;
-	}
-}
-
-bool CompareAB(int size, int * tempA, int * tempB)
-{
-	for (int i = 0; i < size; i++)
-	{
-		if (!(tempA[i] == tempB[i]))
-		{
-			return false;
-		}
-
-	}
-	return true;
-}
-
-void CorrImgA(int width, int height, int* imgA) {
-	int size = width * height;
-
-	int step = 3;
-	int color = 1;
-	int count = 0;
-	int* temp = new int[size];
-	for (int i = 0; i < size; i++)
-	{
-		temp[i] = imgA[i];
-	}
-
-	for (int x = step; x < width - step; x++)
-	{
-		for (int y = step; y < height - step; y++)
-		{
-			count = 0;
-
-			for (int k = x - step; k < x + step; k++)
-			{
-				for (int j = y - step; j < y + step; j++)
-				{
-					int index = j * width + k;
-					if (temp[index] == color)
-					{
-						count++;
-					}
-				}
-			}
-			if (count >= 25)
-			{
-				imgA[y*width + x] = 1;
-			}
-			else
-				imgA[y*width + x] = 0;
-		}
-	}
-	delete[] temp;
-}
-void CImageStuDlg::OnConnectedArea() //求连通区域
+//求连通区域
+void CImageStuDlg::OnConnectedArea()
 {
 	if (_flag == 0)
 	{
@@ -3507,9 +3363,8 @@ void CImageStuDlg::OnConnectedArea() //求连通区域
 
 }
 
-
-
-void CImageStuDlg::OnThin() //细化
+//细化
+void CImageStuDlg::OnThin()
 {
 
 	if (_flag == 0)
@@ -3641,149 +3496,8 @@ void CImageStuDlg::OnThin() //细化
 
 }
 
-
-typedef struct {
-	int weight;
-	int parent;
-	int lchild;
-	int rchild;
-} HTNode, *HuffmanTree;
-typedef char ** HuffmanCode;
-
-//从第1到第upbound行，找两个，parent为0的权值最小的序号, 赋给s1, s2
-void SelectTwoMin(int upbound, HuffmanTree HT, int &s1, int &s2)
-{
-	//s1 = ...;
-	//s2 = ...;
-
-	int i, smin1, smin2;
-
-	smin1 = 2147483647;
-	smin2 = 2147483647;
-
-	for (i = 1; i <= upbound; i++)
-	{
-		if (HT[i].weight < smin1  && HT[i].parent == 0)
-		{
-			s1 = i;
-			smin1 = HT[i].weight;
-
-		}
-
-	}
-
-	for (i = 1; i <= upbound; i++)
-	{
-
-		if (HT[i].weight < smin2 && HT[i].parent == 0 && HT[i].weight != smin1)
-		{
-
-			s2 = i;
-			smin2 = HT[i].weight;
-
-		}
-	}
-}
-
-void HuffmanCoding(HuffmanTree &HT, HuffmanCode &HC, int *w, int n)
-{
-	int m, i, start, current, father;
-	int s1, s2;
-	char *cd;
-
-	HuffmanTree p;
-
-	m = 2 * n - 1;
-
-	if (n <= 1)
-	{
-		return;
-	}
-
-	//=======树
-	//分配空间
-
-	HT = (HuffmanTree)malloc((m + 1) * sizeof(HTNode));
-	//初始化前n行
-
-	for (i = 1; i <= n; i++)
-	{
-		HT[i].weight = w[i - 1];
-		HT[i].lchild = 0;
-		HT[i].parent = 0;
-		HT[i].rchild = 0;
-
-	}
-
-
-
-
-	for (; i <= m; i++)
-	{
-
-		HT[i].weight = 0;
-		HT[i].lchild = 0;
-		HT[i].parent = 0;
-		HT[i].rchild = 0;
-	}
-	//求第n+1到2*n-1行
-
-	//从第1到第i-1行，找两个，parent为0的权值最小的序号, 赋给s1, s2
-
-	//填充第i行
-
-	//修改第s1和s2行的parent
-
-
-	for (i = n + 1; i <= m; i++)
-	{
-		SelectTwoMin(i - 1, HT, s1, s2);
-
-		HT[i].lchild = s1;
-		HT[i].rchild = s2;
-		HT[i].weight = HT[s1].weight + HT[s2].weight;
-		HT[s1].parent = i;
-		HT[s2].parent = i;
-	}
-
-	//========编码
-	//分配空间
-	HC = (HuffmanCode)malloc((n + 1) * sizeof(char *));
-	cd = (char *)malloc(n * sizeof(char));
-	cd[n - 1] = '\0';
-
-	//从第1到第n个，依次求HC[i]
-
-	//当前节点current从第i行开始，沿二叉树从下往上到二叉树第二层节点（根节点为结束条件）
-	//	如果当前节点current是它父节点father的左孩子，则0，否则1，
-
-
-	//为第i个编码申请空间，并将cd[start]开始的字符串复制进去
-
-
-
-	for (i = 1; i <= n; i++)
-	{
-		start = n - 1;
-
-		for (current = i, father = HT[i].parent; father != 0; current = father, father = HT[father].parent)
-		{
-			if (HT[father].lchild == current)
-			{
-				cd[--start] = '0';
-			}
-
-			else
-			{
-				cd[--start] = '1';
-			}
-		}
-		HC[i] = (char *)malloc((n - start) * sizeof(char));
-		strcpy(HC[i], &cd[start]);
-	}
-	free(cd);
-}
-void CImageStuDlg::OnHuffman() //哈夫曼编码
+//哈夫曼编码
+void CImageStuDlg::OnHuffman()
 {
 	if (_flag == 0)
 	{
@@ -3812,12 +3526,12 @@ void CImageStuDlg::OnHuffman() //哈夫曼编码
 
 	HuffmanCoding(ht, hc, w, 256);
 
-	
+
 	std::ofstream SaveFile("a.txt");
 
 	for (i = 1; i <= 256; i++)
 	{
-		SaveFile << "灰度" << i - 1 << "编码为:" << hc[i] << "数量为:" << w[i] << "权重：" << ht[i].weight <<endl;
+		SaveFile << "灰度" << i - 1 << "编码为:" << hc[i] << "数量为:" << w[i] << "权重：" << ht[i].weight << endl;
 	}
 	SaveFile << "TOP100Code：";
 	for (i = 0; i < size; i++)
