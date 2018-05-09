@@ -156,6 +156,7 @@ public:
 
 
 
+	afx_msg void OnThreshold();
 };
 
 //{{AFX_INSERT_LOCATION}}

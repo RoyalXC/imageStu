@@ -143,6 +143,7 @@ BEGIN_MESSAGE_MAP(CImageStuDlg, CDialog)
 	ON_COMMAND(IDC_CONNECTED_AREA, OnConnectedArea)
 	ON_COMMAND(IDC_THIN, OnThin)
 	//}}AFX_MSG_MAP
+	ON_COMMAND(IDC_THRESHOLD, &CImageStuDlg::OnThreshold)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -175,7 +176,7 @@ BOOL CImageStuDlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
-	// TODO: Add extra initialization here
+	// TO DO: Add extra initialization here
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -260,7 +261,7 @@ void CImageStuDlg::OnDestroy()
 {
 	CDialog::OnDestroy();
 
-	// TODO: Add your message handler code here
+	// TO DO: Add your message handler code here
 
 	if (_flag == true) {
 		FreeData();
@@ -278,7 +279,7 @@ void CImageStuDlg::OnDestroy()
 //////////////////////////////////////////////////////////////////////////
 void CImageStuDlg::OnFileOpen()
 {
-	// TODO: Add your command handler code here
+	// TO DO: Add your command handler code here
 
 	LPCTSTR lpszFilter = LPCTSTR(_T("BMP Files(*.bmp)|*.bmp|任何文件|*.*|"));
 	CFileDialog dlg(TRUE, lpszFilter, NULL, OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT,
@@ -387,7 +388,7 @@ void CImageStuDlg::OnFileOpen()
 //////////////////////////////////////////////////////////////////////////
 void CImageStuDlg::OnFileShowArray()
 {
-	// TODO: Add your command handler code here
+	// TO DO: Add your command handler code here
 
 	if (_flag == FALSE) {
 		MessageBox(_T("没有打开图像"));
@@ -408,7 +409,7 @@ void CImageStuDlg::OnFileShowArray()
 //////////////////////////////////////////////////////////////////////////
 void CImageStuDlg::OnFileSave()
 {
-	// TODO: Add your command handler code here
+	// TO DO: Add your command handler code here
 	if (!_flag) {
 		MessageBox(_T("没有图片，无法保存"));
 		return;
@@ -857,7 +858,7 @@ void CImageStuDlg::ShowPicByArray(CBaseColorInfo * colorData,
 //   width: int, 图像宽度
 //   height: int, 图像高度
 //////////////////////////////////////////////////////////////////////////
-void CImageStuDlg::ShowPicByArray(int * grayData,int width,int height) {
+void CImageStuDlg::ShowPicByArray(int * grayData, int width, int height) {
 
 	// 将灰度图像转成彩色图像
 	CBaseColorInfo * colorData = new CBaseColorInfo[width * height];
@@ -968,7 +969,7 @@ bool CImageStuDlg::SaveAsBmp(char * bmpName,
 //全红
 void CImageStuDlg::OnAllRed()
 {
-	// TODO: Add your command handler code here
+	// TO DO: Add your command handler code here
 	int width = 800;
 	int height = 600;
 	int size = width * height;
@@ -986,7 +987,7 @@ void CImageStuDlg::OnAllRed()
 void CImageStuDlg::OnRedBlue()
 {
 
-	// TODO: Add your command handler code here
+	// TO DO: Add your command handler code here
 	int width = 800;
 	int height = 600;
 	int size = width * height;
@@ -1022,7 +1023,7 @@ void CImageStuDlg::OnRedBlue()
 //彩色-》灰度
 void CImageStuDlg::OnColorGray()
 {
-	// TODO: Add your command handler code here
+	// TO DO: Add your command handler code here
 
 	if (_flag == 0)
 	{
@@ -1134,7 +1135,7 @@ void CImageStuDlg::OnGRAYRESOlV()
 }
 
 //直接缩放
-void CImageStuDlg::OnDirectScaling() 
+void CImageStuDlg::OnDirectScaling()
 {
 	if (_flag == 0)
 	{
@@ -1181,7 +1182,7 @@ void CImageStuDlg::OnDirectScaling()
 }
 
 //最近邻插值
-void CImageStuDlg::OnScall2() 
+void CImageStuDlg::OnScall2()
 {
 	if (_flag == 0)
 	{
@@ -1234,7 +1235,7 @@ void CImageStuDlg::OnScall2()
 }
 
 //双线性插值
-void CImageStuDlg::OnScall3() 
+void CImageStuDlg::OnScall3()
 {
 	if (_flag == 0)
 	{
@@ -1315,7 +1316,7 @@ void CImageStuDlg::OnScall3()
 }
 
 //平移
-void CImageStuDlg::OnTranslation() 
+void CImageStuDlg::OnTranslation()
 {
 	if (_flag == 0)
 	{
@@ -1354,7 +1355,7 @@ void CImageStuDlg::OnTranslation()
 }
 
 //水平镜像
-void CImageStuDlg::OnHorizontal() 
+void CImageStuDlg::OnHorizontal()
 {
 	if (_flag == 0)
 	{
@@ -1388,7 +1389,7 @@ void CImageStuDlg::OnHorizontal()
 }
 
 //垂直镜像
-void CImageStuDlg::OnVertical() 
+void CImageStuDlg::OnVertical()
 {
 	if (_flag == 0)
 	{
@@ -1422,7 +1423,7 @@ void CImageStuDlg::OnVertical()
 }
 
 //转置
-void CImageStuDlg::OnTranspose() 
+void CImageStuDlg::OnTranspose()
 {
 	if (_flag == 0)
 	{
@@ -1455,7 +1456,7 @@ void CImageStuDlg::OnTranspose()
 }
 
 //取反
-void CImageStuDlg::OnTakeBack() 
+void CImageStuDlg::OnTakeBack()
 {
 	if (_flag == 0)
 	{
@@ -1484,7 +1485,7 @@ void CImageStuDlg::OnTakeBack()
 }
 
 //冥次变换
-void CImageStuDlg::OnHadesTrans() 
+void CImageStuDlg::OnHadesTrans()
 {
 	if (_flag == 0)
 	{
@@ -1526,7 +1527,7 @@ void CImageStuDlg::OnHadesTrans()
 }
 
 //对数变换
-void CImageStuDlg::OnLogTrans() 
+void CImageStuDlg::OnLogTrans()
 {
 	if (_flag == 0)
 	{
@@ -1595,7 +1596,7 @@ void CImageStuDlg::OnPiecewise()
 }
 
 //位平面
-void CImageStuDlg::OnWeipingmian() 
+void CImageStuDlg::OnWeipingmian()
 {
 	if (_flag == 0)
 	{
@@ -1686,7 +1687,7 @@ void CImageStuDlg::OnJunhenghua()
 }
 
 //均值滤波快速计算
-void CImageStuDlg::OnJunZhiLvBo() 
+void CImageStuDlg::OnJunZhiLvBo()
 {
 	if (_flag == 0)
 	{
@@ -1912,7 +1913,7 @@ void CImageStuDlg::OnLinYuYuZhi()
 }
 
 //2D中值滤波
-void CImageStuDlg::On2dZhongzhi() 
+void CImageStuDlg::On2dZhongzhi()
 {
 	if (_flag == 0)
 	{
@@ -1956,7 +1957,7 @@ void CImageStuDlg::On2dZhongzhi()
 }
 
 //2D中值滤波（十字）
-void CImageStuDlg::On2dZhongzhiShizi() 
+void CImageStuDlg::On2dZhongzhiShizi()
 {
 	if (_flag == 0)
 	{
@@ -2003,7 +2004,7 @@ void CImageStuDlg::On2dZhongzhiShizi()
 }
 
 //拉普拉斯算子
-void CImageStuDlg::OnLaplace() 
+void CImageStuDlg::OnLaplace()
 {
 	if (_flag == 0)
 	{
@@ -2066,7 +2067,7 @@ void CImageStuDlg::OnLaplace()
 }
 
 //Sobel 算子
-void CImageStuDlg::OnSobel() 
+void CImageStuDlg::OnSobel()
 {
 	if (_flag == 0)
 	{
@@ -2137,7 +2138,7 @@ void CImageStuDlg::OnSobel()
 }
 
 //RGB->HSI
-void CImageStuDlg::OnRgbHsi() 
+void CImageStuDlg::OnRgbHsi()
 {
 	if (_flag == 0)
 	{
@@ -2238,7 +2239,7 @@ void CImageStuDlg::OnRgbHsi()
 }
 
 //256灰度->216彩色
-void CImageStuDlg::On256gray216color() 
+void CImageStuDlg::On256gray216color()
 {
 	if (_flag == 0)
 	{
@@ -2289,7 +2290,7 @@ void CImageStuDlg::On256gray216color()
 }
 
 //HSI->RGB
-void CImageStuDlg::OnHsiRgb() 
+void CImageStuDlg::OnHsiRgb()
 {
 	if (_flag == 0)
 	{
@@ -2538,7 +2539,7 @@ void CImageStuDlg::OnRGBHSIHAdd60()
 		double ii = p3 / 255.0;
 
 
-		double rr, gg, bb;
+		double rr = 0, gg = 0, bb = 0;
 		if (fabs(ii) < 0)
 		{
 			rr = 0;
@@ -2878,7 +2879,7 @@ void CImageStuDlg::OnRGBHSIICut50()
 }
 
 //图像膨胀
-void CImageStuDlg::OnExpand() 
+void CImageStuDlg::OnExpand()
 {
 	if (_flag == 0)
 	{
@@ -2920,7 +2921,7 @@ void CImageStuDlg::OnExpand()
 }
 
 //图像腐蚀
-void CImageStuDlg::OnDilation() 
+void CImageStuDlg::OnDilation()
 {
 	if (_flag == 0)
 	{
@@ -3531,10 +3532,11 @@ void CImageStuDlg::OnHuffman()
 
 	for (i = 1; i <= 256; i++)
 	{
-		SaveFile << "灰度" << i - 1 << "编码为:" << hc[i] << "数量为:" << w[i] << "权重：" << ht[i].weight << endl;
+		if (w[i-1] > 0)
+			SaveFile << "灰度" << i - 1 << "编码为:" << hc[i] << "数量为:" << ht[i].weight << endl;
 	}
 	SaveFile << "TOP100Code：";
-	for (i = 0; i < size; i++)
+	for (i = 0; i < 100; i++)
 	{
 		SaveFile << hc[_grayData[i] + 1];
 	}
@@ -3544,4 +3546,90 @@ void CImageStuDlg::OnHuffman()
 	for (i = 1; i <= 5; i++)
 		free(hc[i]);
 
+}
+
+//阈值计算
+void CImageStuDlg::OnThreshold()
+{
+	// TO DO: 在此添加命令处理程序代码
+	if (_flag == 0)
+	{
+		MessageBox(_T("没有图像导入！！！"));
+		return;
+	}
+
+	int width = _infoHeader.biWidth;
+	int height = _infoHeader.biHeight;
+	int size = width * height;
+	double T0 = 0, T1 = 0;
+	double MinGray = 255, MaxGray = 0;
+	double sumA = 0, sumB = 0;
+	int countA = 0, countB = 0;
+	CBaseColorInfo * img = new CBaseColorInfo[size];
+
+	for (int i = 0; i < size; i++)
+	{
+		int gray = _grayData[i];
+		if (gray < MinGray)
+		{
+			MinGray = gray;
+		}
+		if (gray > MaxGray)
+		{
+			MaxGray = gray;
+		}
+	}
+
+	T0 = (MaxGray + MinGray) / 2.0;
+
+	while (true)
+	{
+		sumA = 0;
+		sumB = 0;
+		countA = 0;
+		countB = 0;
+		for (int i = 0; i < size; i++)
+		{
+			int gray = _grayData[i];
+			if (gray <= T0)
+			{
+				sumA += gray;
+				countA++;
+			}
+			else
+			{
+				sumB += gray;
+				countB++;
+			}
+		}
+
+		double H1 = sumA / countA;
+		double H2 = sumB / countB;
+		T1 = (H1 + H2) / 2.0;
+		if (fabs(T0 - T1) > 0.1)
+		{
+			T0 = T1;
+		}
+		else
+			break;
+
+	}
+	CString strMsg = "";
+	strMsg.Format(_T("阈值为：%lf"), T0);
+	MessageBox(strMsg);
+
+	for (int i = 0; i < size; i++)
+	{
+		int gray = _grayData[i];
+		if (gray <= T0)
+		{
+			img[i] = CBaseColorInfo(0, 0, 0);
+		}
+		else
+		{
+			img[i] = CBaseColorInfo(255, 255, 255);
+		}
+	}
+	ShowPicByArray(img, width, height);
+	delete[] img;
 }

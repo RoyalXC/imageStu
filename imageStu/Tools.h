@@ -14,9 +14,6 @@ typedef char ** HuffmanCode;
 //从第1到第upbound行，找两个，parent为0的权值最小的序号, 赋给s1, s2
 void SelectTwoMin(int upbound, HuffmanTree HT, int &s1, int &s2)
 {
-	//s1 = ...;
-	//s2 = ...;
-
 	int i, smin1, smin2;
 
 	smin1 = 2147483647;
