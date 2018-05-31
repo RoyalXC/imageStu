@@ -1020,11 +1020,11 @@ void CImageStuDlg::OnRedBlue()
 
 }
 
+
+//G = 0.299 * R + 0.587 * G + 0.114 * B;
 //彩色-》灰度
 void CImageStuDlg::OnColorGray()
 {
-	// TO DO: Add your command handler code here
-
 	if (_flag == 0)
 	{
 		MessageBox(_T("没有图像导入！！！"));
@@ -1654,20 +1654,20 @@ void CImageStuDlg::OnJunhenghua()
 
 	CBaseColorInfo * img = new CBaseColorInfo[size];
 
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < size; i++)//计算累计值
 	{
 		int gray = _grayData[i];
 		count[gray]++;
 	}
 
-	for (int i = 0; i < 255; i++)
+	for (int i = 0; i < 255; i++)//归一化
 	{
 		count2[i] = (double)count[i] / size;
 	}
 
 	count3[0] = count2[0];
 
-	for (int i = 1; i < 255; i++)
+	for (int i = 1; i < 255; i++)//计算归一化后累计值
 	{
 		count3[i] = count2[i] + count3[i - 1];
 	}
@@ -2963,7 +2963,7 @@ void CImageStuDlg::OnDilation()
 
 }
 
-//开操作
+//开操作,先腐蚀再膨胀
 void CImageStuDlg::OnOpen()
 {
 	if (_flag == 0)
@@ -3025,7 +3025,7 @@ void CImageStuDlg::OnOpen()
 
 }
 
-//图像闭操作
+//图像闭操作，先膨胀再腐蚀
 void CImageStuDlg::OnClose()
 {
 	if (_flag == 0)
@@ -3532,7 +3532,7 @@ void CImageStuDlg::OnHuffman()
 
 	for (i = 1; i <= 256; i++)
 	{
-		if (w[i-1] > 0)
+		if (w[i - 1] > 0)
 			SaveFile << "灰度" << i - 1 << "编码为:" << hc[i] << "数量为:" << ht[i].weight << endl;
 	}
 	SaveFile << "TOP100Code：";
