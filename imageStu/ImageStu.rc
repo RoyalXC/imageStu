@@ -223,7 +223,7 @@ BEGIN
     BEGIN
         MENUITEM "2D中值滤波(全矩阵)",                 ID_2D_ZHONGZHI
         MENUITEM "2D中值滤波(十字)",                  IDC_2D_ZHONGZHI_SHIZI
-        MENUITEM "Laplace算子",                   IDC_LAPLACE
+        MENUITEM "Robert算子",                    IDC_LAPLACE
         MENUITEM "Sobel算子",                     IDC_SOBEL
     END
     POPUP "实验六"

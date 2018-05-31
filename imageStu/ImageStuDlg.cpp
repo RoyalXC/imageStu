@@ -125,7 +125,7 @@ BEGIN_MESSAGE_MAP(CImageStuDlg, CDialog)
 	ON_COMMAND(IDC_LIN_YU_YU_ZHI, OnLinYuYuZhi)
 	ON_COMMAND(ID_2D_ZHONGZHI, On2dZhongzhi)
 	ON_COMMAND(IDC_2D_ZHONGZHI_SHIZI, On2dZhongzhiShizi)
-	ON_COMMAND(IDC_LAPLACE, OnLaplace)
+	ON_COMMAND(IDC_LAPLACE, OnRobert)
 	ON_COMMAND(IDC_SOBEL, OnSobel)
 	ON_COMMAND(IDC_RGB_HSI, OnRgbHsi)
 	ON_COMMAND(IDC_256GRAY_216COLOR, On256gray216color)
@@ -2003,8 +2003,8 @@ void CImageStuDlg::On2dZhongzhiShizi()
 
 }
 
-//拉普拉斯算子
-void CImageStuDlg::OnLaplace()
+//罗伯特算子
+void CImageStuDlg::OnRobert()
 {
 	if (_flag == 0)
 	{

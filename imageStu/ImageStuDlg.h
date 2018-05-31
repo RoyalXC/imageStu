@@ -70,7 +70,7 @@ protected:
 	afx_msg void OnLinYuYuZhi();
 	afx_msg void On2dZhongzhi();
 	afx_msg void On2dZhongzhiShizi();
-	afx_msg void OnLaplace();
+	afx_msg void OnRobert();
 	afx_msg void OnSobel();
 	afx_msg void OnRgbHsi();
 	afx_msg void On256gray216color();
